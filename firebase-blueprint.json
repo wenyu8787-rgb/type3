@@ -1,0 +1,33 @@
+{
+  "entities": {
+    "Score": {
+      "title": "Score",
+      "description": "A player's game score",
+      "type": "object",
+      "properties": {
+        "score": {
+          "type": "number",
+          "description": "The score achieved"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "The date the score was achieved"
+        },
+        "playerName": {
+          "type": "string",
+          "description": "The name of the player"
+        }
+      },
+      "required": ["score", "date", "playerName"]
+    }
+  },
+  "firestore": {
+    "/scores": {
+      "schema": {
+        "$ref": "Score"
+      },
+      "description": "Collection of high scores"
+    }
+  }
+}
